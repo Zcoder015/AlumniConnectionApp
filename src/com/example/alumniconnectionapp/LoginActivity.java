@@ -2,6 +2,7 @@ package com.example.alumniconnectionapp;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,11 +34,12 @@ public class LoginActivity extends Activity {
 		password = (EditText)findViewById(R.id.password); 
 		signIn = (Button)findViewById(R.id.sign_in_button); 
 		
+		
 		//set listener for sign in button
 		signIn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
+				loadHomePage(); 
 			}
 
 		}); 
@@ -50,5 +52,11 @@ public class LoginActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_login, menu);
 		return true;
 	}
+	
+	public void loadHomePage(){
+		Intent intent = new Intent(this,HomePage.class); 
+		startActivity(intent); 
+		
+	}
 
-}
+}//end of LoginActivity
