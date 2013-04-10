@@ -20,18 +20,23 @@ public class MainActivity extends TabActivity {
 		
 		//Users tab
 		Intent intent = new Intent().setClass(this,UsersActivity.class); 
-		TabSpec tabSpecUsers = tabHost.newTabSpec("Tab1").setIndicator("Users").setContent(intent); 
+		TabSpec tabSpecUsers = tabHost.newTabSpec("Tab1").setIndicator("Users", resources.getDrawable(R.drawable.ic_menu_allfriends)).setContent(intent); 
 		
 		//Home tab
 		Intent intent2 = new Intent().setClass(this, HomeActivity.class);
-		TabSpec tabSpecHome = tabHost.newTabSpec("Tab2").setIndicator("Home").setContent(intent2); 
+		TabSpec tabSpecHome = tabHost.newTabSpec("Tab2").setIndicator("Home",resources.getDrawable(R.drawable.ic_menu_home)).setContent(intent2); 
+		
+		//Account info 
+		Intent intent3 = new Intent().setClass(this, AccountInfo.class);
+		TabSpec tabSpecInfo = tabHost.newTabSpec("Tab3").setIndicator("Account Info", resources.getDrawable(R.drawable.ic_menu_preferences)).setContent(intent3); 
 		
 		//Add tabs
-		tabHost.addTab(tabSpecUsers); 
-		tabHost.addTab(tabSpecHome);
+		tabHost.addTab(tabSpecHome); 
+		tabHost.addTab(tabSpecUsers);
+		tabHost.addTab(tabSpecInfo); 
 		
-		//set default tab
-		tabHost.setCurrentTab(1); 
+		//set default tab to Home
+		tabHost.setCurrentTab(0); 
 		
 	}//end of onCreate
 
