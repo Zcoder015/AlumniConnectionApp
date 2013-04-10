@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".UsersActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeActivity" />
+        
     </application>
 
 </manifest>

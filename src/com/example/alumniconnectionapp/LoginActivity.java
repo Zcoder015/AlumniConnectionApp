@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
 		signIn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				loadHomePage(); 
+				loadMainPage(); 
 			}
 
 		}); 
@@ -53,9 +53,9 @@ public class LoginActivity extends Activity {
 		return true;
 	}
 	
-	public void loadHomePage(){
-		//Intent intent = new Intent(this,HomePage.class); 
-		//startActivity(intent); 
+	public void loadMainPage(){
+		Intent intent = new Intent(this,MainActivity.class); 
+		startActivity(intent); 
 		
 	}
 
