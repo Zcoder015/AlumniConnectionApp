@@ -24,19 +24,6 @@
             </intent-filter>
         </activity>
         
-        <activity
-            android:name=".HomePage"
-            android:label="@string/title_activity_home_page"
-            android:parentActivityName="android.app.TabActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="android.app.TabActivity" />
-            <intent-filter>
-				<action android:name="com.example.alumniconnectionapp.HOME_PAGE" />
-				<category android:name="android.intent.category.DEFAULT" />
-			</intent-filter>
-        </activity>
-        
     </application>
 
 </manifest>

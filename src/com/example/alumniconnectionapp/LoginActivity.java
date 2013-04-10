@@ -54,8 +54,8 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void loadHomePage(){
-		Intent intent = new Intent(this,HomePage.class); 
-		startActivity(intent); 
+		//Intent intent = new Intent(this,HomePage.class); 
+		//startActivity(intent); 
 		
 	}
 
