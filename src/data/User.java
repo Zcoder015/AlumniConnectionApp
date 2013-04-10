@@ -2,22 +2,22 @@ package data;
 
 public class User {
 
-	private String admin;
-	private String email; 
-	private String faculty; 
-	private String id; 
-	private String name; 
+	public boolean admin;
+	public String email; 
+	public boolean faculty; 
+	public String id; 
+	public String name; 
 	
 	//Constructor
 	public User(){
 		
 	}//end of constructor
 	
-	public String getAdmin(){
+	public boolean getAdmin(){
 		return this.admin; 
 	}
 	
-	public void setAdmin(String admin){
+	public void setAdmin(boolean admin){
 		this.admin = admin; 
 	}
 	
@@ -29,11 +29,11 @@ public class User {
 		this.email = email; 
 	}
 	
-	public String getFaculty(){
+	public boolean getFaculty(){
 		return this.faculty; 
 	}
 	
-	public void setFaculty(String faculty){
+	public void setFaculty(boolean faculty){
 		this.faculty = faculty; 
 	}
 	
