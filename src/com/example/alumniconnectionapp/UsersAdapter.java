@@ -14,7 +14,7 @@ import data.User;
 public class UsersAdapter extends BaseAdapter {
 	
 	private final Context context; 
-	private final List<User> userList; 
+	private List<User> userList; 
 	
 	//Constructor
 	public UsersAdapter(Context context, List<User> userList){
@@ -27,7 +27,7 @@ public class UsersAdapter extends BaseAdapter {
 	}
 	
 	public Object getItem(int position) {
-        return userList.get(position);
+        return this.userList.get(position);
     }
 
     public long getItemId(int position) {
@@ -67,7 +67,7 @@ public class UsersAdapter extends BaseAdapter {
             name = new TextView(context);
             name.setText(userName);
             name.setTextSize(16f);
-            name.setTextColor(Color.WHITE);
+            name.setTextColor(Color.RED);
             addView(name, params);
         }
         

@@ -2,11 +2,11 @@ package data;
 
 public class User {
 
-	public boolean admin;
-	public String email; 
-	public boolean faculty; 
-	public String id; 
-	public String name; 
+	public boolean admin = false;
+	public String email = ""; 
+	public boolean faculty = false; 
+	public String id = ""; 
+	public String name = ""; 
 	
 	//Constructor
 	public User(){

@@ -13,10 +13,10 @@ public class UsersFetcher {
 	
 	//Constructor
 	public UsersFetcher(){
-		
+		userList = new ArrayList<User>(); 
 	}
 	
-	private ArrayList<User> parseUsers(String resp){
+	public ArrayList<User> parseUsers(String resp){
 		try {
 			JSONArray products = new JSONArray(resp);
 

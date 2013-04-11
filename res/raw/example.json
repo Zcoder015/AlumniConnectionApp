@@ -1,0 +1,15 @@
+[
+    {
+        "admin": true,
+        "created_at": "2013-03-07T21:45:43Z",
+        "email": "example@alumniconnection.com",
+        "faculty": false,
+        "id": 1,
+        "name": "Erica Bacon",
+        "password_digest": "$2a$10$q5tvcCaqyGQ77fnuIWFZfOex0DnxDxYEHrB0WQJGF2U3BaFLg7tZm",
+        "remember_token": "RrsUcDjHjM3yaTTmbs6CdQ",
+        "resume": null,
+        "updated_at": "2013-03-18T18:05:01Z"
+    }
+
+]
