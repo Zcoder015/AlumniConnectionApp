@@ -3,47 +3,57 @@ package data;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class UsersFetcher {
+public class PostFetcher {
 	
-	private ArrayList<User> userList; 
+	private ArrayList<Post> posts; 
 	
 	//Constructor
-	public UsersFetcher(){
-		userList = new ArrayList<User>(); 
+	public PostFetcher(){
+		posts = new ArrayList<Post>(); 
 	}
 	
-	private ArrayList<User> parseUsers(String resp){
+	private ArrayList<Post> parsePosts(String resp){
 		try {
 			JSONArray products = new JSONArray(resp);
 
 			for (int i = 0; i < products.length(); i++) {
 				JSONObject product = products.getJSONObject(i);
-				boolean admin = product.getBoolean("admin");
-				String email = product.getString("email");
-				boolean faculty = product.getBoolean("faculty");
-				int id = product.getInt("id"); 
-				String name = product.getString("name");
+				String date = product.getString("created_at"); 
+				String content = product.getString("content");
+				String id = product.getString("id");
+				String user_id = product.getString("user_id");
+				
+				//Formats date string
+				String dateString = date; 
+				Scanner scanner = new Scanner(dateString).useDelimiter("-");
+				String year = scanner.next();
+				String month = scanner.next(); 
+				String day = scanner.next(); 
+				
+				//Extract day
+				Scanner scan2 = new Scanner(day).useDelimiter("T"); 
+				String dayWithoutTime = scan2.next(); 
 
-				User user = new User();
-				user.setAdmin(admin);
-				user.setEmail(email);
-				user.setFaculty(faculty);
-				user.setId(new Integer(id).toString());
-				user.setName(name);
+				Post post = new Post();
+				post.setPostDate("Posted on " + month + "-" + dayWithoutTime + "-" + year); 
+				post.setContent(content);
+				post.setId(id);
+				post.setUserId(user_id);
 
-				userList.add(user);
+				posts.add(post);
 			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return userList;
-	}//end of parseUsers
+		return posts;
+	}//end of parsePosts
 	
-	public ArrayList<User> getUserFromFile(String fileName) {
+	public ArrayList<Post> getPostFromFile(String fileName) {
 		long startTime = System.currentTimeMillis();
 
 		try {
@@ -59,14 +69,14 @@ public class UsersFetcher {
 		    }
 
 			// Parse the JSON string
-			userList = parseUsers(stringBuilder.toString());
+			posts = parsePosts(stringBuilder.toString());
 		} catch (Exception e) {
 			//Log.e(Constants.LOGTAG, " " + CatalogFetcher.CLASSTAG, e);
 		}
 		long duration = System.currentTimeMillis() - startTime;
 		//Log.v(Constants.LOGTAG, " " + CatalogFetcher.CLASSTAG
 		//		+ " send request and parse reviews duration - " + duration);
-		return userList;
+		return posts;
 	}
 
 }//end of class 
