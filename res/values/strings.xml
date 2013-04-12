@@ -10,5 +10,6 @@
     <string name="password_prompt">Password</string>
     <string name="sign_in_button">Sign In </string>
     <string name="title_activity_home_page">HomePage</string>
+    <string name="menu_add_post">Write Post</string>
 
 </resources>
