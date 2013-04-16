@@ -2,6 +2,8 @@ package data;
 
 import java.util.Date;
 
+import android.os.Bundle;
+
 public class Post {
 	
 	public String content = ""; 
@@ -44,6 +46,26 @@ public class Post {
 	
 	public void setPostDate(String date){
 		this.postDate = date; 
+	}
+	
+	public Bundle toBundle(){
+		Bundle b = new Bundle(); 
+		b.putString("content", this.content); 
+		b.putString("id", this.id); 
+		b.putString("user_id", this.user_id); 
+		b.putString("postDate", this.postDate); 
+		
+		return b; 
+	}
+	
+	public static Post fromBundle(Bundle b){
+		Post post = new Post(); 
+		post.setContent(b.getString("content")); 
+		post.setId("id"); 
+		post.setUserId("user_id"); 
+		post.setPostDate("postDate"); 
+		
+		return post; 
 	}
 
 }//end of class 
