@@ -26,9 +26,10 @@ public final class R {
         public static final int empty=0x7f090000;
         public static final int empty2=0x7f090001;
         public static final int flipper=0x7f090002;
-        public static final int menu_settings=0x7f090006;
+        public static final int menu_settings=0x7f090007;
         public static final int password=0x7f090004;
-        public static final int sign_in_button=0x7f090005;
+        public static final int server_url=0x7f090005;
+        public static final int sign_in_button=0x7f090006;
     }
     public static final class layout {
         public static final int activity_account_info=0x7f030000;
@@ -52,8 +53,10 @@ public final class R {
         public static final int email_prompt=0x7f060005;
         public static final int hello_world=0x7f060001;
         public static final int menu_add_post=0x7f060009;
+        public static final int menu_log_out=0x7f06000b;
         public static final int menu_settings=0x7f060002;
         public static final int password_prompt=0x7f060006;
+        public static final int server=0x7f06000a;
         public static final int sign_in_button=0x7f060007;
         public static final int title_activity_home_page=0x7f060008;
     }

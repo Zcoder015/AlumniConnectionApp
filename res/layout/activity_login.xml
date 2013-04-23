@@ -35,11 +35,23 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"/>
     
+    <EditText 
+        android:id="@+id/server_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/server"
+        android:inputType="textUri"
+        android:layout_below="@id/password"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+    
+    
+    
     <Button
                 android:id="@+id/sign_in_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_in_button"
-                android:layout_below="@id/password" />
+                android:layout_below="@id/server_url" />
 
 </RelativeLayout>

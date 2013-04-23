@@ -27,11 +27,13 @@ public class LoginActivity extends Activity {
 	private ViewFlipper flipper; 
 	private EditText email; 
 	private EditText password; 
+	private EditText serverurl; 
 	private Button signIn; 
 	private ProgressDialog pd; 
 	
 	Preferences myprefs = null;
 	AlertDialog.Builder adb;
+	private static final String CLASSTAG = LoginActivity.class.getSimpleName(); 
 	
 	private final Handler handler = new Handler() {
 
@@ -112,14 +114,14 @@ public class LoginActivity extends Activity {
 
 						// get the string and do something with it.
 
-				/*		serverurl = (EditText) findViewById(R.id.server_url);
+						serverurl = (EditText) findViewById(R.id.server_url);
 						if (serverurl.getText().length() == 0) {
 
-							AlertDialog ad = ShowSettings.this.adb.create();
+							AlertDialog ad = LoginActivity.this.adb.create();
 							ad.setMessage("Please Enter The URL of The Server");
 							ad.show();
 							return;
-						} */ 
+						} 
 
 						email = (EditText) findViewById(R.id.email);
 						if (email.getText().length() == 0) {
@@ -137,25 +139,29 @@ public class LoginActivity extends Activity {
 							return;
 						}
 
-						performRequest("http://localhost:3000/signin.json", "POST", email.getText()
+						performRequest("http://10.0.82.105:3000/signin.json", "POST", email.getText()
 								.toString(), password.getText().toString());
+						
+						loadMainPage();
 					} else { // Log out
-				/*		serverurl = (EditText) findViewById(R.id.server_url);
+						serverurl = (EditText) findViewById(R.id.server_url);
 						if (serverurl.getText().length() == 0) {
 
-							AlertDialog ad = ShowSettings.this.adb.create();
+							AlertDialog ad = LoginActivity.this.adb.create();
 							ad.setMessage("Please Enter The URL of The Server");
 							ad.show();
 							return;
-						} */ 
-						performRequest("http://localhost:3000/logout.json", "DELETE",null, null);
+						} 
+						performRequest("http://10.0.82.105:3000/logout.json", "DELETE",null, null);
+						
+						
 					}
 
 				} catch (Exception e) {
 					//Log.i(LoginActivity.this.CLASSTAG, "Failed to Save Settings ["
 						//	+ e.getMessage() + "]");
 				}
-				loadMainPage(); 
+				//loadMainPage(); 
 			}
 
 		}); 
@@ -171,11 +177,11 @@ public class LoginActivity extends Activity {
 	public void loadScreen(){
 		
 		try {
-			//final EditText serverurl = (EditText) findViewById(R.id.server_url);
+			final EditText serverurl = (EditText) findViewById(R.id.server_url);
 			final EditText email = (EditText) findViewById(R.id.email);
 			final EditText password = (EditText) findViewById(R.id.password);
 
-			//serverurl.setText(this.myprefs.getServer());
+			serverurl.setText(this.myprefs.getServer());
 			email.setText(this.myprefs.getUserName());
 			password.setText(this.myprefs.getPassword());
 
@@ -205,13 +211,13 @@ public class LoginActivity extends Activity {
 	private void performRequest(final String url, final String method,
 			final String user, final String pass) {
 
-	/*	Log.d(Constants.LOGTAG, " " + ShowSettings.CLASSTAG + " request url - "
+		Log.d(Constants.LOGTAG, " " + LoginActivity.CLASSTAG + " request url - "
 				+ url);
-		Log.d(Constants.LOGTAG, " " + ShowSettings.CLASSTAG
+		Log.d(Constants.LOGTAG, " " + LoginActivity.CLASSTAG
 				+ " request method - " + method);
-		Log.d(Constants.LOGTAG, " " + ShowSettings.CLASSTAG + " user - " + user);
-		Log.d(Constants.LOGTAG, " " + ShowSettings.CLASSTAG + " password - "
-				+ pass); */ 
+		Log.d(Constants.LOGTAG, " " + LoginActivity.CLASSTAG + " user - " + user);
+		Log.d(Constants.LOGTAG, " " + LoginActivity.CLASSTAG + " password - "
+				+ pass);  
 
 		final HashMap<String, String> params = new HashMap<String, String>();
 		if ((user != null) && (pass != null)) {

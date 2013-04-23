@@ -10,7 +10,7 @@ public class Preferences {
     private Editor editor = null;
     private String username= "Unknown";
     private String password= "Unknown";
-    private String serverurl = "http://localhost:3000";
+    private String serverurl = "http://10.0.82.105:3000";
     private boolean valid = false;
 
     public Preferences(Context context) {
@@ -55,10 +55,10 @@ public class Preferences {
 
     public String getServer() {
         if (this.prefs == null) {
-            return "http://localhost:3000/";
+            return "http://10.1.74.50:3000";
         }
 
-        this.serverurl = this.prefs.getString("serverurl", "http://localhost:3000");
+        this.serverurl = this.prefs.getString("serverurl", "http://10.0.82.105:3000");
         return this.serverurl;
     }
 

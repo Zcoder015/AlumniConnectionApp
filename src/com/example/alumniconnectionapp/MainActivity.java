@@ -81,10 +81,10 @@ public class MainActivity extends TabActivity {
 		this.pd = ProgressDialog.show(this, "", "Loading...", true, false); 
 		
 		final ResponseHandler<String> responseHandler = HTTPRequestHelper
-				.getResponseHandlerInstance(this.progresshandler);
+				.getResponseHandlerInstance(this.progresshandler); 
 		
 		Resources resources = getResources(); 
-		TabHost tabHost = getTabHost(); 
+		TabHost tabHost = getTabHost();  
 		
 		//Users tab
 		Intent intent = new Intent().setClass(this,UsersActivity.class); 
@@ -96,7 +96,7 @@ public class MainActivity extends TabActivity {
 		
 		//Account info 
 		Intent intent3 = new Intent().setClass(this, AccountInfo.class);
-		TabSpec tabSpecInfo = tabHost.newTabSpec("Tab3").setIndicator("Account Info", resources.getDrawable(R.drawable.ic_menu_preferences)).setContent(intent3); 
+		TabSpec tabSpecInfo = tabHost.newTabSpec("Tab3").setIndicator("Work").setContent(intent3); 
 		
 		//Add tabs
 		tabHost.addTab(tabSpecHome); 
@@ -115,9 +115,9 @@ public class MainActivity extends TabActivity {
 						HTTPRequestHelper helper = new HTTPRequestHelper(
 								responseHandler);
 						helper.performGet(MainActivity.this.prefs.getServer()
-								+ "/UserPosts.json", null, null, null);
+								+ "/users/1.json", null, null, null);
 					}
-				}.start();
+				}.start(); 
 		
 	}//end of onCreate
 

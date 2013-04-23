@@ -8,10 +8,12 @@ import data.PostFetcher;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ public class HomeActivity extends ListActivity {
 	private ProgressDialog pd; 
 	List<Post> posts; 
 	private static final int MENU_ADD_POST = Menu.FIRST;
+	private static final int LOG_OUT = Menu.FIRST + 1; 
 	
  /*	private final Handler handler = new Handler() {
         @Override
@@ -68,7 +71,22 @@ public class HomeActivity extends ListActivity {
 		menu.add(0, HomeActivity.MENU_ADD_POST, 0, R.string.menu_add_post).setIcon(
 	            android.R.drawable.ic_menu_add); 
 		
+		menu.add(0, HomeActivity.LOG_OUT, 0, R.string.menu_log_out); 
+		
 		return true; 
+	}
+	
+	public boolean onMenuItemSelected(int featureId, MenuItem item){
+		
+		switch(item.getItemId()){
+		
+		case LOG_OUT:
+			Intent intent = new Intent(this, LoginActivity.class); 
+			startActivity(intent); 
+		
+		}
+		
+		return super.onMenuItemSelected(featureId, item); 
 	}
 	
 	private void loadPosts(){

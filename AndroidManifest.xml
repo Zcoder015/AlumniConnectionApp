@@ -24,12 +24,22 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".UsersActivity" />
+        <activity android:name=".UsersActivity" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".AccountInfo" />
         <activity android:name=".UserDetail" />
         
+        
+        
     </application>
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

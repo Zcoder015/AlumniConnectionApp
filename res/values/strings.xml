@@ -11,5 +11,7 @@
     <string name="sign_in_button">Sign In </string>
     <string name="title_activity_home_page">HomePage</string>
     <string name="menu_add_post">Write Post</string>
+    <string name="server">Server Url</string>
+    <string name="menu_log_out">Log Out</string>
 
 </resources>
