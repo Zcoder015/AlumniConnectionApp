@@ -55,7 +55,7 @@ public class Preferences {
 
     public String getServer() {
         if (this.prefs == null) {
-            return "http://10.1.74.50:3000";
+            return "http://10.0.82.105:3000";
         }
 
         this.serverurl = this.prefs.getString("serverurl", "http://10.0.82.105:3000");

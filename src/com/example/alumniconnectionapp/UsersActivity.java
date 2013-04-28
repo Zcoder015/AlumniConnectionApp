@@ -49,6 +49,8 @@ public class UsersActivity extends ListActivity {
 		listview.setChoiceMode(ListView.CHOICE_MODE_SINGLE); 
 		listview.setEmptyView(this.empty); 
 		
+		loadUsers(); 
+		
 	}
 	
 	public void onResume(){
